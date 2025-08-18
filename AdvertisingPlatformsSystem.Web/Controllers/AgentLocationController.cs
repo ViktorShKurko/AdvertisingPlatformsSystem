@@ -26,6 +26,9 @@ public class AgentLocationController : ControllerBase
     {
         if (file == null || file.Length == 0)
             return BadRequest("Файл пустой");
+
+        if (file.ContentType != "text/plain")
+            return BadRequest("Неверный формат файла");
         
         byte[] fileBytes;
         using (var ms = new MemoryStream())
@@ -35,6 +38,6 @@ public class AgentLocationController : ControllerBase
         }
         
         _agentLocationService.UploadAgentLocationData(fileBytes);
-        return Ok();
+        return Ok("Success");
     }
 }
