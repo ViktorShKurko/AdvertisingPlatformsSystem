@@ -12,7 +12,7 @@ public class AgentLocationService :IAgentLocationService
         _repository = agentLocationRepository;
     }
 
-    public void UpdateAgentLocationData(byte[] fileData)
+    public void UploadAgentLocationData(byte[] fileData)
     {
         var agentLocationDataRows = FileReaderHelprer.GetAllLinesFromByteArray(fileData);
         var agentsList = new Dictionary<string, AgentInfo>();

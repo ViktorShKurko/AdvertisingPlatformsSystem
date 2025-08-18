@@ -8,25 +8,12 @@ public class AgentLocationMapTree
     private Dictionary<long, AgentInfo> _agents;
     private TreeNode _root;
     
-    private IEnumerable<long> FindAgentsIdsByLocation(string location)
+    public IEnumerable<AgentInfo> GetAgentsByLocation(string location)
     {
-        var mapItems = location.Split('/');
-        var queueMap = new Queue<string>(mapItems);
-        var current = _root;
-        
-        while (queueMap.Count > 0 && current != null)
+        var agentsIds = FindAgentsIdsByLocation(location);
+        foreach (var agentsId in agentsIds)
         {
-            var currentMapKey = queueMap.Dequeue();
-            var child = current.GetChildByKey(currentMapKey);
-            if (child != null)
-            {
-                foreach (var agentId in child.AgentsIds)
-                {
-                    yield return agentId;
-                }
-            }
-
-            current = child;
+            yield return _agents[agentsId];
         }
     }
     
@@ -63,6 +50,28 @@ public class AgentLocationMapTree
         }
 
         current.AddAgent(agentId);
+    }
+    
+    private IEnumerable<long> FindAgentsIdsByLocation(string location)
+    {
+        var mapItems = location.Split('/');
+        var queueMap = new Queue<string>(mapItems);
+        var current = _root;
+        
+        while (queueMap.Count > 0 && current != null)
+        {
+            var currentMapKey = queueMap.Dequeue();
+            var child = current.GetChildByKey(currentMapKey);
+            if (child != null)
+            {
+                foreach (var agentId in child.AgentsIds)
+                {
+                    yield return agentId;
+                }
+            }
+
+            current = child;
+        }
     }
     
     private void SetAgentsData(IEnumerable<AgentInfo> agentLocationInfos)
