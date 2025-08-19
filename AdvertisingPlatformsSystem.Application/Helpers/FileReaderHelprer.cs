@@ -2,7 +2,7 @@ using System.Text;
 
 namespace AdvertisingPlatformsSystem.Helpers;
 
-public class FileReaderHelprer
+internal class FileReaderHelprer
 {
     public static IEnumerable<string> GetAllLinesFromByteArray(byte[] fileData) 
     {

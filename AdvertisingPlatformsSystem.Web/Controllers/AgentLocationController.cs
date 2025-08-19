@@ -17,7 +17,8 @@ public class AgentLocationController : ControllerBase
     [HttpPost("search")]
     public IActionResult GetAgentsByLocation([FromBody] string location)
     {
-        return Ok(_agentLocationService.GetAgentsByLocations(location));
+        var agents = _agentLocationService.GetAgentsByLocations(location);
+        return Ok(agents);
     }
 
     [HttpPost("load")]
@@ -37,7 +38,8 @@ public class AgentLocationController : ControllerBase
             fileBytes = ms.ToArray();
         }
         
-        _agentLocationService.UploadAgentLocationData(fileBytes);
-        return Ok("Success");
+        var result = _agentLocationService.UploadAgentLocationData(fileBytes);
+        
+        return Ok(result);
     }
 }

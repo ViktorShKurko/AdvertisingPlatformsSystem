@@ -19,7 +19,7 @@ public class AgentLocationMapTree
     
     public void SetAgentLocationsData(IEnumerable<AgentInfo> agentLocationInfos)
     {
-        var newRoot = new TreeNode(".");
+        var newRoot = new TreeNode(null);
         SetAgentsData(agentLocationInfos);
         
         foreach (var agentLocationInfo in agentLocationInfos)

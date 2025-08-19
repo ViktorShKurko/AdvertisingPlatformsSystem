@@ -1,8 +1,10 @@
+using AdvertisingPlatformsSystem.Dto;
+
 namespace AdvertisingPlatformsSystem.AgentLocation;
 
 
 public interface IAgentLocationService
 {
-    void UploadAgentLocationData(byte[] data);
+    UploadDto UploadAgentLocationData(byte[] data);
     IEnumerable<string> GetAgentsByLocations(string location);
 }

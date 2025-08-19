@@ -17,4 +17,8 @@
       <ProjectReference Include="..\AdvertisingPlatformsSystem.Infrastucture\AdvertisingPlatformsSystem.Infrastucture.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Midllware\" />
+    </ItemGroup>
+
 </Project>
