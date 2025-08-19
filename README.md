@@ -27,7 +27,7 @@
 git clone https://github.com/ViktorShKurko/AdvertisingPlatformsSystem.git
 ```
 #### 2. Запустить AdvertisingPlatformsSystem.Web.
-
+В свойствах решения выбрать пункт "Настроить запускаемые проекты" потсавить в качестве запускаемого проекта **AdvertisingPlatformsSystem.Web** и выбрать протокол **http** при отладке.
 ## Архитектура и особенности
 Решение разбито на слои:
 - Application
