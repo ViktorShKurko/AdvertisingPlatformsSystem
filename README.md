@@ -28,6 +28,7 @@ git clone https://github.com/ViktorShKurko/AdvertisingPlatformsSystem.git
 ```
 #### 2. Запустить AdvertisingPlatformsSystem.Web.
 В свойствах решения выбрать пункт "Настроить запускаемые проекты" потсавить в качестве запускаемого проекта **AdvertisingPlatformsSystem.Web** и выбрать протокол **http** при отладке.
+Если браузер сам не открывается то нужно вручную ввести адрес http://localhost:5112/swagger/index.html.
 ## Архитектура и особенности
 Решение разбито на слои:
 - Application
