@@ -1,4 +1,4 @@
-﻿namespace AdvertisingPlatformsSystem.Domain;
+﻿namespace AdvertisingPlatformsSystem.Core.Models;
 
 public class AgentInfo
 {

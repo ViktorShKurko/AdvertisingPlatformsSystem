@@ -1,4 +1,5 @@
-using AdvertisingPlatformsSystem.Domain;
+using AdvertisingPlatformsSystem.Core.Containers;
+using AdvertisingPlatformsSystem.Core.Models;
 using AdvertisingPlatformsSystem.Dto;
 using AdvertisingPlatformsSystem.Helpers;
 
@@ -6,16 +7,15 @@ namespace AdvertisingPlatformsSystem.AgentLocation;
 
 public class AgentLocationService :IAgentLocationService
 {
-    private readonly IAgentLocationRepository _repository;
-
-    public AgentLocationService(IAgentLocationRepository agentLocationRepository)
+    private readonly AgentLocationMapTree _tree;
+    public AgentLocationService()
     {
-        _repository = agentLocationRepository;
+        _tree = new AgentLocationMapTree();
     }
 
     public UploadDto UploadAgentLocationData(byte[] fileData)
     {
-        var agentLocationDataRows = FileReaderHelprer.GetAllLinesFromByteArray(fileData);
+        var agentLocationDataRows = FileReaderHelper.GetAllLinesFromByteArray(fileData);
         var agentsList = new Dictionary<string, AgentInfo>();
         var uploadDto = new UploadDto();
 
@@ -47,12 +47,12 @@ public class AgentLocationService :IAgentLocationService
             uploadDto.TotalLoaded++;
         } 
         
-        _repository.Update(agentsList.Values.ToArray());
+        _tree.SetAgentLocationsData(agentsList.Values.ToArray());
         return uploadDto;
     }
 
     public IEnumerable<string> GetAgentsByLocations(string location)
     {
-        return _repository.GetAgentsByLocation(location).Select(x => x.Name);
+        return _tree.GetAgentsByLocation(location).Select(x => x.Name);
     }
 }

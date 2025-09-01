@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisingPlatformsSystem.Infrastucture", "AdvertisingPlatformsSystem.Infrastucture\AdvertisingPlatformsSystem.Infrastucture.csproj", "{0C09870D-56E5-46BF-A771-48BFB9BEA056}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisingPlatformsSystem.Application", "AdvertisingPlatformsSystem.Application\AdvertisingPlatformsSystem.Application.csproj", "{A9C4BADC-B7EB-4F5F-A464-46EE6136D96D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisingPlatformsSystem.Domain", "AdvertisingPlatformsSystem.Domain\AdvertisingPlatformsSystem.Domain.csproj", "{FFE2AEDF-FD1A-42D1-B66E-A5009883B062}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisingPlatformsSystem.Core", "AdvertisingPlatformsSystem.Core\AdvertisingPlatformsSystem.Core.csproj", "{FFE2AEDF-FD1A-42D1-B66E-A5009883B062}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisingPlatformsSystem.Web", "AdvertisingPlatformsSystem.Web\AdvertisingPlatformsSystem.Web.csproj", "{BF9787F1-607D-40F6-ACCB-ACB12D118ADB}"
 EndProject
@@ -14,10 +12,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0C09870D-56E5-46BF-A771-48BFB9BEA056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C09870D-56E5-46BF-A771-48BFB9BEA056}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C09870D-56E5-46BF-A771-48BFB9BEA056}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C09870D-56E5-46BF-A771-48BFB9BEA056}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A9C4BADC-B7EB-4F5F-A464-46EE6136D96D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A9C4BADC-B7EB-4F5F-A464-46EE6136D96D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9C4BADC-B7EB-4F5F-A464-46EE6136D96D}.Release|Any CPU.ActiveCfg = Release|Any CPU

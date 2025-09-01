@@ -1,11 +1,6 @@
 namespace AdvertisingPlatformsSystem.Exceptions;
 
-public class InvalidFileFormatException : Exception
-{
-    public InvalidFileFormatException(string trueFormat) : base(message: $"Invalid file format, must be {trueFormat}") {}
-}
+public class InvalidFileFormatException(string trueFormat)
+    : Exception(message: $"Invalid file format, must be {trueFormat}");
 
-public class InvalidRowFormatException : Exception
-{
-    public InvalidRowFormatException(string row) : base(message: $"Row format is invalid {row}") {}
-}
+public class InvalidRowFormatException(string row) : Exception(message: $"Row format is invalid {row}");

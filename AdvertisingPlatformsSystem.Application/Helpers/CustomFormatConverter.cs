@@ -1,4 +1,4 @@
-using AdvertisingPlatformsSystem.Domain;
+using AdvertisingPlatformsSystem.Core.Models;
 using AdvertisingPlatformsSystem.Exceptions;
 
 namespace AdvertisingPlatformsSystem.Helpers;

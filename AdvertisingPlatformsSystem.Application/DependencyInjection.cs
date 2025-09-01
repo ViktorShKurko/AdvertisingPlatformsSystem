@@ -7,7 +7,7 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddApplications(this IServiceCollection services)
     {
-        services.AddScoped<IAgentLocationService, AgentLocationService>();
+        services.AddSingleton<IAgentLocationService, AgentLocationService>();
         return services;
     }
 }

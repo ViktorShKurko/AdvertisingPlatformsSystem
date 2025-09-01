@@ -1,12 +1,13 @@
 using AdvertisingPlatformsSystem.AgentLocation;
 using AdvertisingPlatformsSystem.Domain;
-using AdvertisingPlatformsSystem.Storages;
+using AdvertisingPlatformsSystem.Domain.Containers;
+using AdvertisingPlatformsSystem.Domain.Models;
 
 namespace AdvertisingPlatformsSystem.Repositories;
 
 public class AgentLocationTreeMapRepository : IAgentLocationRepository
 {
-    private AgentLocationMapTree _tree;
+    private readonly AgentLocationMapTree _tree;
     public AgentLocationTreeMapRepository()
     {
         _tree = new AgentLocationMapTree();

@@ -1,6 +1,6 @@
-using AdvertisingPlatformsSystem.Domain;
+using AdvertisingPlatformsSystem.Core.Models;
 
-namespace AdvertisingPlatformsSystem.Storages;
+namespace AdvertisingPlatformsSystem.Core.Containers;
 
 public class AgentLocationMapTree
 {
