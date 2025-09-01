@@ -3,7 +3,7 @@ using AdvertisingPlatformsSystem.Exceptions;
 
 namespace AdvertisingPlatformsSystem.Helpers;
 
-public class CustomFormatConverter
+internal static class CustomFormatConverter
 {
     public static AgentInfo Deserialize(string line)
     {

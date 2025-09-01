@@ -1,13 +1,23 @@
 using AdvertisingPlatformsSystem.Core.Models;
 
 namespace AdvertisingPlatformsSystem.Core.Containers;
-
+/// <summary>
+///  Контейнер ввиде древа данных. Содержит в себе узлы которые ассоциируются с доменами локации и список агентов.
+/// </summary>
 public class AgentLocationMapTree
 {
+    /// <summary>
+    /// Список агентов.
+    /// </summary>
     public IReadOnlyDictionary<long, AgentInfo> Agents => _agents;
     private Dictionary<long, AgentInfo> _agents;
     private TreeNode _root;
     
+    /// <summary>
+    /// Получить список действующих агентов в заданной локации.
+    /// </summary>
+    /// <param name="location">Локация в формате строки: /ru/serv </param>
+    /// <returns>Список найденных агентов</returns>
     public IEnumerable<AgentInfo> GetAgentsByLocation(string location)
     {
         var agentsIds = FindAgentsIdsByLocation(location);
@@ -17,6 +27,10 @@ public class AgentLocationMapTree
         }
     }
     
+    /// <summary>
+    /// Загрузка данных по агентам и локация в дерево данных.
+    /// </summary>
+    /// <param name="agentLocationInfos">Список агентов и данных по ним.</param>
     public void SetAgentLocationsData(IEnumerable<AgentInfo> agentLocationInfos)
     {
         var newRoot = new TreeNode(null);

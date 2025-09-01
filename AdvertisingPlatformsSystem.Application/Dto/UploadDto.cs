@@ -1,5 +1,7 @@
 namespace AdvertisingPlatformsSystem.Dto;
-
+/// <summary>
+/// Информация о загрузке данных с файла.
+/// </summary>
 public class UploadDto
 {
     /// <summary>

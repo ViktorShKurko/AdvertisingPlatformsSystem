@@ -5,13 +5,12 @@ using AdvertisingPlatformsSystem.Helpers;
 
 namespace AdvertisingPlatformsSystem.AgentLocation;
 
+/// <summary>
+/// <inheritdoc cref="IAgentLocationService"/>
+/// </summary>
 public class AgentLocationService :IAgentLocationService
 {
-    private readonly AgentLocationMapTree _tree;
-    public AgentLocationService()
-    {
-        _tree = new AgentLocationMapTree();
-    }
+    private readonly AgentLocationMapTree _tree = new();
 
     public UploadDto UploadAgentLocationData(byte[] fileData)
     {

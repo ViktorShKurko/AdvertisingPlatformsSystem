@@ -20,7 +20,7 @@ public class AgentLocationController : ControllerBase
         var agents = _agentLocationService.GetAgentsByLocations(location);
         return Ok(agents);
     }
-
+    
     [HttpPost("load")]
     [Consumes("multipart/form-data")]
     public IActionResult Update(IFormFile file)
